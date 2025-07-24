@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<header class="header">
+  <nav class="navbar">
+    <img src="assets/logo.jpg" class="navbar__logo" alt="logo">
+
+    <input type="checkbox" id="click" class="navbar__checkbox">
+    <label for="click" class="navbar__toggle">
+      <i class="fa-solid fa-bars" id="menu"></i>
+      <i class="fa-solid fa-xmark" id="close"></i>
+    </label>
+
+    <ul class="navbar__menu">
+      <li class="navbar__item"><a href="#accueil" class="navbar__link">Accueil</a></li>
+      <li class="navbar__item"><a href="#historique" class="navbar__link">À propos</a></li>
+      <li class="navbar__item"><a href="#commander" class="navbar__link">Nos vins</a></li>
+      <li class="navbar__item"><a href="#contact" class="navbar__link">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <main class="main-content" role="main">
+    
+    <!-- Hero -->
+    <section class="hero" aria-label="Présentation de l'entreprise">
+      <div class="hero__content">
+        <h1 class="hero__title">Savourez l’élégance du vin <br> congolais</h1>
+        <p class="hero__description">
+            Ave Maria vous invite à un voyage sensoriel à travers ses vins artisanaux,
+            alliant tradition, passion et caractère. Une expérience unique née du cœur du Congo.
+        </p>
+        <a href="a-propos.html" class="hero__btn">En savoir plus</a>
+      </div>
+    </section>
+
+    <!-- À propos (aperçu) -->
+    <section class="about-preview" aria-label="Aperçu à propos">
+  <div class="about-preview__wrapper">
+    
+    <!-- Colonne image à gauche -->
+    <div class="about-preview__image-wrapper">
+      <img src="assets/a-propo.jpg" alt="Photo de la famille Ave Maria" class="about-preview__image">
+    </div>
+
+    <!-- Colonne contenu à droite -->
+    <div class="about-preview__content">
+      <h2 class="about-preview__title">Une passion familiale</h2>
+      <p class="about-preview__text">
+        Ave Maria, c’est plus qu’un vin — c’est une tradition transmise de génération en génération au cœur du Congo.
+      </p>
+      <a href="a-propos.html" class="about-preview__link">Voir plus</a>
+    </div>
+
+  </div>
+</section>
+
+
+
+    <!-- Nos vins (aperçu) -->
+    <section class="wines-preview" aria-label="Nos produits phares">
+  <h2 class="wines-preview__title">Nos Vins</h2>
+
+  <div class="wines-preview__list">
+
+    <!-- Carte 1 -->
+    <article class="wine-card">
+      <img src="assets/nos-vins-1.jpg" alt="Vin Wiva Kamouna" class="wine-card__image" />
+      <h3 class="wine-card__name">Wiva Kamouna</h3>
+      <p class="wine-card__description">Fabriqué à base de feuilles d’avocatier, de miel et d’un savoir-faire local unique.</p>
+      <div class="wine-card__footer">
+        <span class="wine-card__price">12 000 FC</span>
+        <a href="nos-vins.html" class="wine-card__btn">Commander</a>
+      </div>
+    </article>
+
+    <!-- Carte 2 -->
+    <article class="wine-card">
+      <img src="assets/nos-vins-2.jpg" alt="Vin Blanc" class="wine-card__image" />
+      <h3 class="wine-card__name">Vin Blanc Ave Maria</h3>
+      <p class="wine-card__description">Un vin frais aux arômes floraux, parfait pour les moments de célébration.</p>
+      <div class="wine-card__footer">
+        <span class="wine-card__price">10 500 FC</span>
+        <a href="nos-vins.html" class="wine-card__btn">Commander</a>
+      </div>
+    </article>
+
+    <!-- Carte 3 -->
+    <article class="wine-card">
+      <img src="assets/nos-vins-3.jpg" alt="Vin Rosé" class="wine-card__image" />
+      <h3 class="wine-card__name">Rosé Tropical</h3>
+      <p class="wine-card__description">Élaboré avec passion, idéal pour les soirées détendues et festives.</p>
+      <div class="wine-card__footer">
+        <span class="wine-card__price">11 000 FC</span>
+        <a href="nos-vins.html" class="wine-card__btn">Commander</a>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Bouton Voir Plus -->
+  <div class="wines-preview__more">
+    <a href="nos-vins.html" class="wines-preview__btn">Voir plus</a>
+  </div>
+</section>
+
+
+    <!-- Galerie -->
+    <section class="gallery" aria-label="Galerie de nos produits">
+  <h2 class="gallery__title">Galerie</h2>
+  <p class="gallery__description">
+    Plongez dans l’univers Ave Maria à travers cette galerie captivante. Des instants de création, de dégustation et de passion, immortalisés pour vous faire ressentir l’âme de nos vins congolais.
+  </p>
+  <div class="gallery__grid" role="list">
+    <figure class="gallery__item gallery__item--large-left" role="listitem">
+      <img src="assets/galery-7.jpg" alt="Cave de vieillissement des vins Ave Maria" class="gallery__image" />
+      <figcaption class="gallery__caption">Notre cave de maturation artisanale</figcaption>
+    </figure>
+    <figure class="gallery__item gallery__item--top-middle" role="listitem">
+      <img src="assets/galery-6.jpg" alt="Dégustation de vin lors d'un salon" class="gallery__image" />
+      <figcaption class="gallery__caption">Moment de partage en salon</figcaption>
+    </figure>
+    <figure class="gallery__item gallery__item--bottom-middle" role="listitem">
+      <img src="assets/galery-5.jpg" alt="Bouteilles prêtes pour l’expédition" class="gallery__image" />
+      <figcaption class="gallery__caption">Expédition en cours</figcaption>
+    </figure>
+    <figure class="gallery__item gallery__item--large-right" role="listitem">
+      <img src="assets/galery-4.jpg" alt="Équipe Ave Maria réunie autour du pressoir" class="gallery__image" />
+      <figcaption class="gallery__caption">Notre équipe au cœur de l’action</figcaption>
+    </figure>
+  </div>
+</section>
+
+
+    <!-- FAQ -->
+    <section class="faq" aria-label="Questions fréquentes">
+  <h2 class="faq__title">FAQ</h2>
+  <div class="faq__container">
+    <div class="faq__card">
+      <h3 class="faq__question">Où est fabriqué le vin Ave Maria ?</h3>
+      <p class="faq__answer">Nos vins sont élaborés au cœur du Congo, dans le respect des traditions locales.</p>
+    </div>
+    <div class="faq__card">
+      <h3 class="faq__question">Quels cépages sont utilisés ?</h3>
+      <p class="faq__answer">Nous utilisons une sélection de cépages locaux soigneusement cultivés et récoltés à la main.</p>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Témoignages -->
+    <section class="testimonials" aria-label="Avis des clients">
+      <h2 class="testimonials__title">Ils parlent de nous</h2>
+      <blockquote class="testimonial">
+        <p class="testimonial__text">“Un goût unique qui me rappelle les moments en famille.”</p>
+        <footer class="testimonial__author">— Jean, Kinshasa</footer>
+      </blockquote>
+    </section>
+    
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__content">
+      <p class="footer__text">© 2025 Ave Maria. Tous droits réservés.</p>
+      <a href="contact.html" class="footer__link">Nous contacter</a>
+    </div>
+  </footer>
+
+</body>
+</html>

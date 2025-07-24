@@ -1,0 +1,569 @@
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: orange;
+  --underline-color: red;
+  --bg-color: #fff;
+  --text-color: #333;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.header {
+  width: 100%;
+  background-color: var(--bg-color);
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar {
+  width: 100%;
+  margin: auto;
+  padding: 0.5rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.navbar__logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Menu normal (desktop) */
+.navbar__menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: var(--text-color);
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.navbar__link:hover {
+  color: var(--primary-color);
+}
+
+.navbar__link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--underline-color);
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+/* Burger icon hidden on desktop */
+.navbar__toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+.navbar__toggle,#click {
+  display: none;
+}
+
+.hero {
+  position: relative;
+  background-image: url('../assets/hero.jpg'); /* Change le chemin selon ton projet */
+  background-size: cover;
+  background-position: top;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* assombrit l’image */
+  z-index: -1;
+}
+
+.hero__content {
+  max-width: 1000px;
+  padding: 2rem;
+  margin-left: 5%;
+}
+
+.hero__title {
+  font-size: 4rem;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #ff0000, #0066ff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero__description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #e0e0e0;
+}
+
+.hero__btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #7b001c; /* rouge bordeaux */
+  color: #fff;
+  border: 2px solid #7b001c;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero__btn:hover {
+  background-color: transparent;
+  color: #fff;
+  border-color: #7b001c;
+}
+
+/* section à propos */
+
+.about-preview {
+  padding: 4rem 2rem;
+  background-color: #f8f3f0;
+}
+
+.about-preview__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* pour responsive */
+}
+
+.about-preview__image-wrapper {
+  flex: 1 1 50%;
+  max-width: 500px;
+}
+
+.about-preview__image {
+  width: 70%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+}
+
+.about-preview__content {
+  flex: 1 1 50%;
+  max-width: 600px;
+}
+
+.about-preview__title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.about-preview__text {
+  font-size: 1.125rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.about-preview__link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  background-color: #800020;
+  color: #fff;
+  border: 2px solid #800020;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.about-preview__link:hover {
+  background-color: transparent;
+  color: #800020;
+}
+
+/* la section nos vins  */
+
+.wines-preview {
+  padding: 4rem 2rem;
+  background: #f2e9e4;
+  text-align: center;
+}
+
+.wines-preview__title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #800020;
+}
+
+.wines-preview__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.wine-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 320px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+
+.wine-card__image {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.wine-card__name {
+  font-size: 1.5rem;
+  color: #4b1c1c;
+  margin-bottom: 0.5rem;
+}
+
+.wine-card__description {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.wine-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wine-card__price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #800020;
+}
+
+.wine-card__btn {
+  padding: 0.5rem 1rem;
+  background-color: #800020;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.wine-card__btn:hover {
+  background-color: #a02828;
+}
+
+/* Voir plus */
+.wines-preview__more {
+  margin-top: 2rem;
+}
+
+.wines-preview__btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #800020;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: background 0.3s ease;
+}
+
+.wines-preview__btn:hover {
+  background-color: #a02828;
+}
+
+/* la section gallerie */
+
+.gallery {
+  padding: 5rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.gallery__title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.gallery__description {
+  text-align: center;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  color: #444;
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 250px; /* auto adapt height rows */
+  gap: 1rem;
+}
+
+.gallery__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  height: 100%;
+}
+
+.gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;   
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* Hover caption */
+.gallery__caption {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  transition: bottom 0.4s ease;
+}
+
+.gallery__item:hover .gallery__caption {
+  bottom: 0;
+}
+
+.gallery__item:hover .gallery__image {
+  transform: scale(1.05);
+}
+
+/* Grid placement */
+.gallery__item--large-left {
+  grid-row: span 2;
+  grid-column: 1 / 2;
+}
+
+.gallery__item--top-middle {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}
+
+.gallery__item--bottom-middle {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.gallery__item--large-right {
+  grid-row: span 2;
+  grid-column: 3 / 4;
+}
+
+/* la section FAQ */
+
+/* Section FAQ globale */
+.faq {
+  padding: 5rem 2rem;
+  background: linear-gradient(to right, #0f0f0f, #1c1c1c);
+  color: #fff;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.faq__title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+  color: #f5f5f5;
+  text-transform: uppercase;
+}
+
+/* Conteneur des cartes FAQ */
+.faq__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Style de la carte FAQ */
+.faq__card {
+  background: rgba(255, 255, 255, 0.05); /* effet vitré */
+  backdrop-filter: blur(10px);           /* effet glassmorphism */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.faq__card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Titre de la question */
+.faq__question {
+  font-size: 1.4rem;
+  color: #800000; 
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* Réponse */
+.faq__answer {
+  font-size: 1.05rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+
+
+
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    #menu {
+        display: block;
+    }
+    #close {
+        display: none;
+    }
+  .navbar__toggle {
+    display: block;
+  }
+
+  .navbar__checkbox {
+    display: none;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    background-color: var(--bg-color);
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    padding: 5rem 2rem;
+    transition: right 0.5s ease-in-out;
+    z-index: 1000;
+  }
+
+  .navbar__checkbox:checked ~ .navbar__menu {
+    right: 0;
+  }
+
+  .navbar__checkbox:checked ~ .navbar__toggle #menu {
+  display: none;
+}
+
+.navbar__checkbox:checked ~ .navbar__toggle #close {
+  display: block;
+}
+.navbar__toggle i{
+    font-size: 3rem;
+}
+
+  .navbar__link {
+    font-size: 1.2rem;
+  }
+
+  /* la section hero */
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__content {
+    padding: 1.5rem;
+    margin-left: 1.5rem;
+  }
+
+  /* la section nos vins  */
+
+  .wines-preview__list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wine-card {
+    max-width: 90%;
+  }
+
+  /* la section gallerie */
+
+  .gallery__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .gallery__item--large-left,
+  .gallery__item--top-middle,
+  .gallery__item--bottom-middle,
+  .gallery__item--large-right {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .gallery__item {
+    height: 250px;
+  }
+
+  .faq__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faq__card {
+    width: 90%;
+  }
+
+}
