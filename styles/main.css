@@ -535,8 +535,9 @@ body {
 }
 
 .testimonials__track {
+  width: max-content;
   display: flex;
-  animation: scrollLeft 8s linear infinite;
+  animation: scrollLeft 30s linear infinite;
   gap: 2rem;
 }
 
