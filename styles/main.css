@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 :root {
   --primary-color: orange;
@@ -14,7 +17,6 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: var(--bg-color);
   color: var(--text-color);
 }
 
@@ -89,9 +91,43 @@ body {
   display: none;
 }
 
+/* les liens vers les reseaux sociaux */
+
+.navbar__socials {
+  display: none; /* caché par défaut (version desktop) */
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #444;
+  list-style: none;
+}
+
+.navbar__socials a {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.navbar__socials a:hover {
+  transform: scale(1.2);
+}
+
+.navbar__socials .facebook {
+  color: #1877F2;
+}
+
+.navbar__socials .whatsapp {
+  color: #25D366;
+}
+
+.navbar__socials .linkedin {
+  color: #0077B5;
+}
+
+
 .hero {
   position: relative;
-  background-image: url('../assets/hero.jpg'); /* Change le chemin selon ton projet */
+  background-image: url('../assets/hero.webp'); 
   background-size: cover;
   background-position: top;
   min-height: 100dvh;
@@ -105,7 +141,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6); /* assombrit l’image */
+  background: rgba(0, 0, 0, 0.6); 
   z-index: -1;
 }
 
@@ -141,7 +177,7 @@ body {
   background-color: #ff4d00; /* rouge bordeaux */
   color: #fff;
   border: 2px solid #ff4d00;
-  border-radius: 5px;
+  border-radius: 30px;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
@@ -207,7 +243,7 @@ body {
   background-color: #ff4d00;
   color: #fff;
   border: 2px solid #ff4d00;
-  border-radius: 6px;
+  border-radius: 30px;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
@@ -254,7 +290,6 @@ body {
   width: 100%;
   height: 350px;
   border-radius: 8px;
-  object-fit: ;
   margin-bottom: 0.8rem;
 }
 
@@ -307,7 +342,7 @@ body {
   background-color: #ff4d00;
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 30px;
   font-size: 1.1rem;
   transition: 0.3s ease;
 }
@@ -322,7 +357,7 @@ body {
 
 .gallery {
   padding: 5rem 2rem;
-  background-color: #f9f9f9;
+  background: #f9f9f9;
 }
 
 .gallery__title {
@@ -407,64 +442,379 @@ body {
 }
 
 /* la section FAQ */
-
-/* Section FAQ globale */
 .faq {
-  padding: 5rem 2rem;
-  background: linear-gradient(to right, #0f0f0f, #1c1c1c);
-  color: #fff;
-  font-family: 'Segoe UI', Roboto, sans-serif;
+  padding: 4rem 2rem;
+  background-color: #f2e9e4;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .faq__title {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 3rem;
-  letter-spacing: 1px;
-  color: #800020;
-  text-transform: uppercase;
+  color: #600000;
+  margin-bottom: 2rem;
+  font-weight: 600;
 }
 
-/* Conteneur des cartes FAQ */
 .faq__container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.faq__item {
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.faq__question {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  text-align: left;
+  padding: 1rem;
+  font-weight: bold;
+  cursor: pointer;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2e9e4;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.faq__question:hover {
+  background-color: #fff;
+}
+
+.faq__icon {
+  transition: transform 0.3s ease;
+}
+
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  border-right: 6px solid transparent;
+  transition: max-height 0.6s ease, padding 0.6s ease, border-right 0.6s ease;
+}
+
+.faq__item.open .faq__answer {
+  max-height: 500px;
+  padding: 1rem;
+  border-right: 6px solid;
+  border-image: linear-gradient(to bottom, red, blue, white) 1;
+}
+
+.faq__item.open .faq__icon {
+  transform: rotate(180deg);
+}
+
+/* pour la section Témoignages */
+
+.testimonials {
+  background-color: #f6dacd;
+  padding: 4rem 2rem;
+  overflow: hidden;
+}
+
+.testimonials__title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #600000; 
+}
+
+.testimonials__slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.testimonials__track {
+  display: flex;
+  animation: scrollLeft 30s linear infinite;
   gap: 2rem;
 }
 
-/* Style de la carte FAQ */
-.faq__card {
-  background: rgba(255, 255, 255, 0.05); /* effet vitré */
-  backdrop-filter: blur(10px);           /* effet glassmorphism */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
+.testimonial__card {
+  background-color: white; 
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   padding: 2rem;
-  width: 100%;
+  min-width: 250px;
+  max-width: 300px;
+  flex-shrink: 0;
+  position: relative;
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px); 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+
+.testimonial__text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial__author {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-style: italic;
+  color: #600000;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* la section fait une commande rapide */
+.quick-order {
+  text-align: center;
+  background-color: #f2e9e4;
+  color: #000;
+  padding: 4rem 2rem;
+}
+
+.quick-order__title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #800020;
+}
+
+.quick-order__description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quick-order__btn {
+  background-color: #ff4d00;
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quick-order__btn:hover {
+  background-color: transparent;
+  border: 1px solid #ff4d00;
+  color: #000;
+}
+
+/* Modal */
+.order-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.order-modal.show {
+  display: flex;
+}
+
+.order-modal__content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
   max-width: 400px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.faq__card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+.order-modal__message {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
 }
 
-/* Titre de la question */
-.faq__question {
-  font-size: 1.4rem;
-  color: #800000; 
-  margin-bottom: 1rem;
+.order-modal__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.order-modal__btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
   font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
 }
 
-/* Réponse */
-.faq__answer {
-  font-size: 1.05rem;
-  color: #e0e0e0;
-  line-height: 1.6;
+.order-modal__btn--confirm {
+  background-color: #ff4d00; /* WhatsApp green */
+  color: white;
 }
+
+.order-modal__btn--cancel {
+  background-color: #ccc;
+  color: #000;
+}
+
+
+/* la section Footer */
+
+.footer {
+  background-color: #2a0f16; 
+  color: white;
+  padding: 4rem 2rem;
+}
+
+.footer__container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer__column {
+  flex: 1 1 250px;
+}
+
+.footer__logo {
+  width: 70px;
+  margin-bottom: 1rem;
+}
+
+.footer__message {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  font-size: 1.4rem;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+.social-icon.facebook { color: #1877F2; }
+.social-icon.linkedin { color: #0A66C2; }
+.social-icon.whatsapp { color: #25D366; }
+
+.footer__heading {
+  font-size: 1.2rem;
+  color: #ff4d00 ;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+  display: inline-block;
+}
+
+.footer__links,
+.footer__contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__links li,
+.footer__contact li {
+  margin-bottom: 0.75rem;
+}
+
+.footer__links a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.footer__links a:hover {
+  color: #e2bcbc;
+}
+
+.footer__contact i {
+  margin-right: 0.5rem;
+  color: #e2bcbc;
+}
+
+.footer__bottom {
+  text-align: center;
+  color: #fff;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  margin-bottom: -3rem;
+  font-size: 1rem;
+}
+
+/* le bouton flottant */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff4d00;
+  color: white;
+  border:none;
+  border-radius: 10%;
+  padding: 0.8rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+}
+.scroll-to-top:hover{
+  background: transparent;
+  border: 2px solid red;
+}
+
+.scroll-to-top i {
+  font-size: 1.5rem; 
+}
+
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+/* Animation  du bouton flottant*/
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+
+
+
 
 
 
@@ -528,6 +878,10 @@ body {
     padding: 0.5rem 2rem;
   }
 
+  .navbar__socials {
+    display: flex;
+  }
+
   /* la section hero */
   .hero__title {
     font-size: 2.5rem;
@@ -536,6 +890,27 @@ body {
   .hero__content {
     padding: 1.5rem;
     margin-left: 1.5rem;
+  }
+
+  /* pour la section à-propos */
+  .about-preview__wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-preview__image-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-preview__image {
+    width: 100%; 
+  }
+  .about-preview{
+    text-align: center;
   }
 
   /* la section nos vins  */
@@ -575,6 +950,10 @@ body {
 
   .faq__card {
     width: 90%;
+  }
+
+  .testimonial__card {
+    min-width: 80%;
   }
 
 }
