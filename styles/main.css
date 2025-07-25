@@ -515,7 +515,7 @@ body {
 
 /* pour la section Témoignages */
 
-.testimonials {
+/* .testimonials {
   background-color: #f6dacd;
   padding: 4rem 2rem;
   overflow: hidden;
@@ -577,7 +577,7 @@ body {
   100% {
     transform: translateX(-50%);
   }
-}
+} */
 
 /* la section fait une commande rapide */
 .quick-order {
