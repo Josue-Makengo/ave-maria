@@ -536,13 +536,13 @@ body {
 
 .testimonials__track {
   display: flex;
-  animation: scrollLeft 30s linear infinite;
+  animation: scrollLeft 8s linear infinite;
   gap: 2rem;
 }
 
 .testimonial__card {
   background-color: white; 
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   padding: 2rem;
   min-width: 250px;
@@ -551,7 +551,6 @@ body {
   position: relative;
   backdrop-filter: blur(12px); 
   -webkit-backdrop-filter: blur(12px); 
-  border: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
 
@@ -898,6 +897,10 @@ body {
     align-items: center;
     text-align: center;
   }
+  .about-preview__title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+  }
 
   .about-preview__image-wrapper {
     max-width: 100%;
@@ -919,6 +922,10 @@ body {
     flex-direction: column;
     align-items: center;
   }
+  .wines-preview__title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+  }
 
   .wine-card {
     max-width: 90%;
@@ -929,6 +936,10 @@ body {
   .gallery__grid {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+  }
+  .gallery__title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
   }
 
   .gallery__item--large-left,
@@ -950,6 +961,10 @@ body {
 
   .faq__card {
     width: 90%;
+  }
+  .faq__title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
   }
 
   .testimonial__card {
